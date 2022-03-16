@@ -1,0 +1,138 @@
+* {
+  color: #F2F2F2;
+  background-color: #262626;
+  margin: 0 auto;
+  border: 1px;
+  padding: 4px;
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+header {
+  height: 100px;
+  text-align: center;
+}
+
+section {
+  border: 1px solid #F2F2F2
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  display: inline-block;
+  font-family: Georgia;
+  color: #F2A30F
+}
+
+h2 {
+  font-family: Georgia;
+}
+
+audio {
+  padding: 0;
+}
+
+nav {
+  display: inline-block;
+  float: right;
+}
+
+img {
+  border-radius: 50%;
+  margin-right: 40px;
+  position: relative;
+}
+
+figure {
+  padding: 0;
+  align-content: center;
+}
+
+figcaption {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+}
+
+table {
+  caption-side: bottom;
+  border: 1px solid #F2F2F2
+}
+
+
+ul {
+  list-style-type: none;
+  height: 400px;
+  line-height: 2.0; 
+  pading: 40px auto;
+  top: 60px;
+}
+
+ul li{
+  font-family: sans-serif;
+  font-size: 20px;
+  padding: 40px auto;
+  padding-top: 20px;
+}
+
+ol {
+  list-style-type: none;
+  height: 100px;
+}
+
+ol li {
+  display: inline-block;
+  font-size: 18px;
+}
+
+#basic-info {
+  width: 1000px;
+  border: none;
+  margin: 0 auto;
+  height: 500px;
+}
+
+#toomuch-info {
+  width: 1000px;
+  border: none;
+  margin: 20px auto;
+  position: relative;
+  top: 10px;
+  text-align: left;
+}
+
+#contact-info {
+  width: 1000px;
+  border: none;
+  margin: margin: 20px auto;
+  top: 10px;
+}
+
+#TMI1 {
+  display: inline-block;
+  width: 320px;
+  padding: 0;
+  text-align: center;
+  margin: 3px;
+}
+
+#TMI2 {
+  display: inline-block;
+  width: 320px;
+  padding: 0;
+  text-align: center;
+  margin: 3px;
+}
+
+#TMI3 {
+  display: inline-block;
+  width: 320px;
+  padding: 0;
+  text-align: center;
+  margin: 3px;
+}
