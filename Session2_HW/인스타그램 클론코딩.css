@@ -1,0 +1,158 @@
+h2 {
+  margin: 0px;
+  display: inline-block;
+}
+
+h4 {
+  margin: 0px;
+}
+
+h6 {
+  font-size: 14px;
+  margin: 0px;
+  text-align: center;
+}
+
+p {
+  margin: 0px;
+}
+
+#TopUI {
+  width: 420px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#topemoticon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60px;
+  justify-content: space-around;
+}
+
+#Profile {
+  width: 480px;
+}
+
+#ID {
+  display: inline-block;
+}
+
+#profileemoticon {
+  display: inline-block;
+  float: right;
+  margin-right: 57.5px;
+}
+
+#profileemoticon img {
+  padding: 4px;
+}
+
+#ProfileImage {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  width: 420px;
+}
+
+#Memoticon {
+  display: inline-block;
+  width: 200px;
+}
+
+#MemoticonPlus {
+  position: relative;
+  right: 20px;
+}
+
+#Follows {
+  display: flex;
+  width: 280px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#Posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#Followers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#Following {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#Userinfo {
+  margin-bottom: 10px;
+}
+
+#Userinfo p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 13px;
+}
+
+#EditBox {
+  display: flex;
+  width: 420px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#EditProfile {
+  display: flex;
+  width: 380px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 5px 0;
+}
+
+#Addfriends {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+#Stories {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#PhotosEmoticon {
+  width: 420px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#gridbox {
+  border-bottom: 1px solid black;
+  padding: 0 98px;
+}
+
+#userbox {
+  border-bottom: 0.5px solid lightgray;
+  padding: 0 98px;
+}
+
+#Photos {
+  margin: 0;
+  padding: 0;
+}
+#Photos img {
+  width: 140px;
+  margin: 0;
+}
