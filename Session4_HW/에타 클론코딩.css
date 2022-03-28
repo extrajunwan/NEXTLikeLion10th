@@ -1,0 +1,166 @@
+header, main, footer {
+  width: 420px;
+}
+
+header {
+  position: fixed;
+  height: 50px;
+}
+
+main {
+  position: relative;
+  top: 50px;
+  height: 450px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  margin-top: 50px;
+}
+
+h1 { 
+  margin: 0;
+  font-size: 20px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 12px;
+  color: rgb(238, 96, 96) 
+}
+
+h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+  font-size: 12px;
+  color:rgb(241, 169, 34)
+}
+
+dt {
+  font-size: 12px;
+}
+
+.Title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Top_Navigator {
+  margin-top: 12px;
+}
+
+.School_Information_Navigator {
+  margin: 20px 0;
+}
+
+.School_Information{
+  display: flex;
+  padding: 0;
+  justify-content: space-around;
+  text-align: center;
+}
+.School_Information li {
+  list-style: none;
+}
+
+.Favorite_Boards {
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  height: 210px;
+}
+
+#title_emoji {
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#site_collection_title {
+  display: flex;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  width: 310px;
+  height: 170px;
+}
+
+#details {
+  position: relative;
+  top: 80px;
+  right: 190px;
+  font-size: 12px;
+  height: 50px;
+}
+
+#details a {
+  background-color: rgba(232, 232, 235, 0.966);
+  border-radius: 14px;
+  border: 6px solid rgba(232, 232, 235, 0.966);
+}
+
+#emoji {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  margin: 12px;
+}
+
+#words {
+  margin: 12px;
+  position: relative;
+  top: 8px;
+}
+
+#school_information_emoji {
+  background-color: rgba(237, 237, 241, 0.966);
+  border: 1px solid rgba(237, 237, 241, 0.966);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#school_information_emoji a {
+  text-decoration: none;
+}
+
+#bottom_emoji {
+  display: flex;
+  justify-content: space-around;
+}
+
+#bottom_emoji img {
+  padding: 10px 0;
+  width: 24px;
+  height: 24px;
+}
+
+#boards_title {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+
+#boards_title h4 {
+  font-size: 16px;
+}
+
+#board {
+  display: flex;
+}
+
+#board p {
+  color: black;
+  margin: 4px 11px;
+}
