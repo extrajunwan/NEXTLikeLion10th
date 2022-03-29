@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}">
+  <title>출력 화면</title>
+</head>
+<body>
+  <div class="input_text">
+    <h1>입력한 텍스트</h1>
+    <p>{{text}}</p>
+  </div>
+  <div class="result">
+    <div id="result_title">
+      <div id="content">
+        <h1>공백포함 글자수</h1>
+        <p>{{total_len}}</p>
+      </div>
+      <div id="content">
+        <h1>공백제외 글자수</h1>
+        <p>{{no_blank_len}}</p>
+      </div>
+      <div id="content">
+        <h1>단어수</h1>
+        <p>{{word}}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
