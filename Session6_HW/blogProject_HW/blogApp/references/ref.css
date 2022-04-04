@@ -1,0 +1,57 @@
+.Box {
+  background-color: #f0f0f0;
+  position: relative;
+  left:10px;
+  width:440px;
+  height:500px;
+}
+
+.제목 {
+  margin-right:180px;
+  position: relative;
+  left:15px;
+  font-family: "Sunflower";
+}
+
+.버튼 {
+  border-radius: 10ch;
+  font-family: "Sunflower";
+  width:100px;
+  margin:10px 0px;
+}
+
+form {
+  display: inline;
+  padding:0;
+  margin:0;
+  position:relative;
+  left:8px;
+  font-family: "Sunflower";
+}
+
+.second {
+  color: #ff662f;
+  font-size:16px;
+  font-weight:bold;
+}
+
+.fourth {
+  font-size:16px;
+  font-weight:bold;
+}
+
+.line{
+  margin:5px 0px;
+
+}
+
+.bottom {
+  font-family: "Sunflower";
+  background-color: #f0f0f0;
+  border-top: 1px solid #b9b9b9;
+  border-bottom: 1px solid #b9b9b9;
+  width:410px;
+  position: relative;
+  left:6px;
+  Top:10px;
+}

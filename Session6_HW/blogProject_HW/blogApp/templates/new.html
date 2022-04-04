@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'new.css' %}">
+  <title></title>
+</head>
+
+<body>
+  <h2>Blog</h2>
+  <div class="Box">
+    <div class="Navi">
+      <div id="navi">
+        <a href="{% url 'list' %}" style="text-decoration:none">홈</a>
+      </div>
+      <div id="navi">
+        <a href="{% url 'list_hobby' %}" style="text-decoration:none">취미</a>
+      </div>
+      <div id="navi">
+        <a href="{% url 'list_food' %}" style="text-decoration:none">음식</a>
+      </div>
+      <div id="navi">
+        <a href="{% url 'list_programming' %}" style="text-decoration:none">프로그래밍</a>
+      </div>
+    </div>
+
+    <div class="Title">
+      <form action="new" method="POST">{% csrf_token %}
+        <div class="category">
+          <select>
+            <option value="hobby">취미</option>
+            <option value="food">음식</option>
+            <option value="programming">프로그래밍</option>
+          </select>
+          <input type="text" name="title" placeholder="제목을 입력해 주세요.">
+        </div>
+        <textarea name="content" cols="80" rows="30" plceholder="내용을 입력해 주세요."></textarea>
+        <br />
+        <button type="submit">작성 완료</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'details.css' %}"
+  <title>글 상세 페이지</title>
+</head>
+<body>
+  <h2>글 상세 내용</h2>
+  <div>
+    <h3>제목</h3>
+    <div>{{ article.title }}</div>  
+  </div>
+  <div>
+    <h3>내용</h3>
+    <div>{{ article.content }}</div>
+  </div>
+  <a href="{% url 'list' %}">전체 목록으로 돌아가기</a>
+</body>
+</html>

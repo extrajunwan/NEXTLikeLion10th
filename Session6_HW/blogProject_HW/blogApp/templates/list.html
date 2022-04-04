@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}"
+  <title></title>
+</head>
+<body>
+  <h2>Blog</h2>
+  <div class="Box">
+    <div class="Navi">
+      <div id="navi">
+        <a href="{% url 'list' %}" style="text-decoration:none">홈</a>
+      </div>
+      <div id="navi">
+        <a href="{% url 'list_hobby' %}" style="text-decoration:none">취미</a>
+      </div>
+      <div id="navi">
+        <a href="{% url 'list_food' %}" style="text-decoration:none">음식</a>
+      </div>
+      <div id="navi">
+        <a href="{% url 'list_programming' %}" style="text-decoration:none">프로그래밍</a>
+      </div>
+    </div>
+  
+    <div class="content">
+      <div class="content1">
+          <span class="content_title">포스트수 ({{ count }})</span>
+          <a class='write' href="{% url 'new' %}" style="text-decoration:none">WRITE</a>
+      </div>
+      {% for article in articles %}
+      <div class="content2">
+          <p class="article_time">{{ article.updated_at }}</p>
+          <a class= "article_title" href="{% url 'details' article.id %}" style="text-decoration:none">{{ article.title }}</a>
+          <div class = "article_content">
+              <div class = "article_content1">
+                  {{ article.content }}
+              </div>
+          </div>
+          <div class = "article_category">
+              {{ article.category }}
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+</html>

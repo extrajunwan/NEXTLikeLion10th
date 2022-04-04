@@ -1,0 +1,28 @@
+* {
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+.Box {
+  margin: 0 auto;
+  text-align: center;
+}
+.Navi {
+  display: flex;
+  justify-content: center;
+}
+
+.Title {
+  text-align: center;
+}
+
+select, form {
+  margin: 0;
+}
+
+#navi {
+  margin: 0 50px;
+}

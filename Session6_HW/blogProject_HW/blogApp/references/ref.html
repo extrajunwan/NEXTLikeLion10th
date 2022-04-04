@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="ref.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="Box">
+        <span class="제목">글자 / 단어 수 세기</span>
+        <form action="{% url 'result' %}" method="post">{% csrf_token %}
+            <input class="버튼" type="submit" value="텍스트 제출" readonly/>
+            <br />
+            <textarea name="text" cols="60" rows="22" placeholder="텍스트를 입력해 주세요."></textarea>
+            <br />
+            <div class="bottom">
+                <div class="line">
+                    <span class="first">공백 포함 글자 수</span>
+                    <span class="second">0</span>
+                    <span class="third">자</span>
+                    <span class="fourth">0</span>
+                    <span class="third">byte</span>
+                </div>
+                <div class="line">
+                    <span class="first">공백 제외 글자 수</span>
+                    <span class="second">0</span>
+                    <span class="third">자</span>
+                    <span class="fourth">0</span>
+                    <span class="third">byte</span>
+                </div>
+                <div class="line">
+                    <span class="first">단어 수</span>
+                    <span class="second">0</span>
+                    <span class="third">개</span>
+                </div>
+            </div>
+        </form>
+    </div> 
+</body>
+</html>
