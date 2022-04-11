@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List 게시판</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="{% static 'home.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>다 울었니? 이제 할일을 하자</h1>
+    <div class="div-table">
+      <table>
+          <thead>
+              <tr>
+                  <th>할일 목록</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for todo in todos %}
+              <tr>
+                  <td><a href="{% url 'detail' todo.pk %}" style="color: #564F59; background-color: #F2F0F2;">✓ {{todo.title}} (D-{{todo.remain}})</a></td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+    </div>
+    <div class="div-links">
+      <a href="{% url 'new' %}">할일 작성</a>
+    </div>
+</body>
+</html>

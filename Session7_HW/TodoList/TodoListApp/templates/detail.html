@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List 게시판</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="{% static 'detail.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>할일이 뭔지 보자</h1>
+    <table>
+        <tbody>
+            <tr>
+                <th><strong>제목</strong></th>
+                <td>{{todo.title}}</td>
+            </tr>
+            <tr>
+                <th><strong>내용</strong></th>
+                <td>{{todo.content}}</td>
+            </tr>
+            <tr>
+                <th><strong>마감일</strong></th>
+                <td>{{todo.deadline | date:'Y-m-d'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="a-class">
+        <a href="{% url 'home' %}">홈으로</a>
+        <a href="{% url 'edit' todo.pk %}">수정하기</a>
+        <a href="{% url 'delete' todo.pk %}">삭제하기</a>
+    </div>
+
+</body>
+</html>
