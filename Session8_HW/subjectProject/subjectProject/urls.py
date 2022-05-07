@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from subjectApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('subject/', include('subjectApp.urls')),
+    path('', views.SubjectListView.as_view(), name='home'),
+    path('major_page', views.ListMajorView.as_view(), name='major_page'),
+    path('<str:slug>/', views.major_page),
+    path('addMajor/', views.AddMajorView.as_view(), name="addMajor"),
+    path('deleteMajor/<int:pk>/', views.DeleteMajorView.as_view(), name="deleteMajor"),
 ]
