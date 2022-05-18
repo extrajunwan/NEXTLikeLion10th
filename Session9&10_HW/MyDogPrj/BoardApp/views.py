@@ -12,13 +12,16 @@ def list_post(request):
 
 def detail_post(request, post_pk):
   post = Post.objects.get(pk=post_pk)
+  post.click
   comments = Comment.objects.filter(post=post_pk)
 
   if request.method == 'POST':
-    comment = Comment()
-    comment.post = post
-    comment.content = request.POST['comment-content']
-    comment.save()
+    # comment = Comment()
+    # comment.post = post
+    # comment.content = request.POST['comment-content']
+    # comment.save()
+    content = request.POST['comment-content']
+    Comment.objects.create(post=post, content=content)
   return render(request, 'detail_post.html', {'post': post, 'comments': comments})
 
 def delete_post(request, post_pk):
@@ -27,14 +30,27 @@ def delete_post(request, post_pk):
 
   return redirect('home')
 
-def delete_comment(request, comment_pk):
+def delete_comment(request, post_pk, comment_pk):
   comment = Comment.objects.get(pk=comment_pk)
-  post = Post.objects.get(pk=comment.post.pk)
+  comment.delete()
 
-  if request.method == 'POST':
-    comment.delete()
-    return render(request, 'delete_comment.html', {'comment': comment})
-  return redirect('detail_post', kwargs={'post_pk': post.pk})
+  return redirect('detail_post', post_pk)
+  # post = Post.objects.get(pk=comment.post.pk)
+
+  # if request.method == 'POST':
+  #   comment.delete()
+  #   return render(request, 'delete_comment.html', {'comment': comment})
+  # return redirect('detail_post', kwargs={'post_pk': post.pk})
+
+# def update_comment(request, post_pk, comment_pk):
+#   comment = Comment.objects.filter(pk=comment_pk)
+
+#   if request.method == 'POST':
+#     comment.update(
+#       content = request.POST['comment-content']
+#     )
+#     return redirect('detail_post', post_pk)
+#   return render(request, 'detail_post.html', {'comment': comment[0]})
 
 class PostCreate(CreateView):
   model = Post

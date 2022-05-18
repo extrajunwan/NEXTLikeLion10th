@@ -12,9 +12,18 @@ class Post(models.Model):
   post_image = models.ImageField(upload_to='BoardApp/images/%Y/%m/%d/', blank=True)
   created_time = models.DateTimeField(auto_now_add=True)
   updated_time = models.DateTimeField(auto_now=True)
+
+  hitcount = models.PositiveIntegerField(default = 0)
   
+  @property
+  def click(self):
+    self.hitcount += 1
+    self.save()
+
   def __str__(self):
     return self.title
+
+
 
 class Comment(models.Model):
   post = models.ForeignKey(Post, on_delete=models.SET_NULL, null=True, related_name='comment_author')

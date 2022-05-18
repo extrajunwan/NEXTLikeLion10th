@@ -17,7 +17,7 @@
         <div class="card-body">
           <h2>{{ p.title }}</h2>
           <p class="card-text">{{ p.content | truncatewords:25 }}</p>
-          <p><a class="btn btn-secondary" href="{% url 'detail_post' p.pk %}">더보기 &raquo;</a></p>
+          <p><a class="btn btn-primary" href="{% url 'detail_post' p.pk %}">더보기 &raquo; <span class="badge text-bg-secondary">조회수:{{ p.hitcount }}</span></a></p>
         </div>
       </div><!--/.card-body-->
       <br/>
