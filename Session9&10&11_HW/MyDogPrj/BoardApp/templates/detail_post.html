@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'detail_post.css' %}" rel="stylesheet" type="text/css"> 
+{% endblock css %}
+
+{% block content %}
+<div class="container">
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h2>{{ post.title }}</h2>
+          <h6>견주: {{ post.author }}</h6>
+        {% if post.updated_time %}
+          <span>수정일: {{ post.updated_time }} | 조회수: {{ post.hitcount }}</span>
+        {% else %}
+          <span>작성일: {{ post.created_time }} | 조회수: {{ post.hitcount }}</span>
+        {% endif %} 
+          <hr/>
+          {% if post.post_image %}
+          <img src="{{ post.post_image.url }}" alt="..." style="width: 100%;">
+          <hr/>
+          {% endif %}
+          <p class="card-text">{{ post.content }}</p>
+          {% if user.is_authenticated and post.author.pk == user.pk %}
+          <a href="{% url 'update_post' post.pk %}" class="btn btn-sm btn-secondary">수정</a>
+          <a href="{% url 'delete_post' post.pk %}" class="btn btn-sm btn-secondary">삭제</a>
+          {% endif %}
+        </div>
+      </div><!--/.card-body-->
+    </div><!-- /.col-lg-4 -->
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="comment-input">
+            {% if user.is_authenticated %}
+            <h4>{{ post.title }}에 대한 의견을 남겨주세요.</h4>
+              <form method="post">
+                {% csrf_token %} 
+                <textarea id="comment-content" name="comment-content" plceholder="댕댕이에 대한 의견을 남겨주세요." class="form-control"></textarea>
+                <button type="submit" class="btn-sm btn-primary float-end">작성</button>
+              </form>
+            {% else %}
+            <h4>{{ post.title }}에 대한 의견을 남기려면 로그인을 해주세요.</h4>
+            {% endif %}
+          </div>
+          <br/>
+          {% for comment in comments %}
+          {% if comment %}
+          <div class="comment">
+            <h6>{{ comment.author }}</h6>
+            <p>{{ comment.content }}</p>
+            {% else %}
+            <p>댓글이 없습니다.</p>
+            {% endif %}
+            {% if user.is_authenticated and comment.author.pk == user.pk %}
+            <a href="#" class="btn btn-sm btn-secondary">수정(미완성)</a>
+            <a href="{% url 'delete_comment' post.pk comment.pk %}" class="btn btn-sm btn-secondary">삭제</a>
+            {% endif %}
+          </div>
+          <hr/>
+          {% endfor %}
+        </div>
+      </div><!--/.card-body-->
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+</div>
+{% endblock content %}

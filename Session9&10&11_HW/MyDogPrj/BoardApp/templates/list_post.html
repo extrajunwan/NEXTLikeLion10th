@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'list_post.css' %}" rel="stylesheet" type="text/css"> 
+{% endblock css %}
+
+{% block content %}
+<div class="container">
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    {% for p in posts %}
+    <div class="col-lg-4">
+      <div class="card" style="width: 18rem;">
+        {% if p.post_image %}
+        <img src="{{ p.post_image.url }}" class="card-img-top" alt="...">
+        {% endif %}
+        <div class="card-body">
+          <h2>{{ p.title }}</h2>
+          <p class="card-text">{{ p.content | truncatewords:25 }}</p>
+          <p><a class="btn btn-primary" href="{% url 'detail_post' p.pk %}">더보기 &raquo; <span class="badge text-bg-secondary">조회수:{{ p.hitcount }}</span></a></p>
+        </div>
+      </div><!--/.card-body-->
+      <br/>
+    </div><!-- /.col-lg-4 -->
+    {% endfor %}
+  </div><!-- /.row -->
+</div>
+{% endblock content %}

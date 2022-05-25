@@ -1,0 +1,55 @@
+{% load socialaccount %} 
+{% providers_media_js %} 
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary">홈</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="#" class="nav-link px-2 link-success">당신은: {{ user.username }}</a></li>
+      <li><a href="{% url 'create_post' %}" class="nav-link px-2 link-dark">댕댕이 추가</a></li>
+      <li><a href="{% url 'logout' %}" class="nav-link px-2 link-dark">로그아웃</a></li>
+      {% else %}
+      <li>
+        <a class="nav-link px-2 link-dark" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</a>
+      </li>
+      <li><a href="{% url 'signup' %}" class="nav-link px-2 link-dark">회원가입</a></li>
+      {% endif %} 
+    </ul>
+  </header>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel"><i class="fa-solid fa-right-to-bracket"></i>&nbsp; 로그인</h5>
+        <!-- <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <form class='login' method='POST' action="{% provider_login_url 'kakao' %}">
+              {% csrf_token %} 
+              {{ form.as_p }}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+              <input type="password" name="password">
+              {% endif %} 
+              <button class="btn btn-outline-dark btn-block btn-sm primaryAction"><i class="fa-brands fa-kickstarter-k"></i>&nbsp&nbsp Log in with Kakao</button>
+            </form>
+            <a role="button" class="btn btn-outline-dark btn-block btn-sm" href="/accounts/login/"><i class="fa-solid fa-envelope"></i>&nbsp&nbsp Log in with Username</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
