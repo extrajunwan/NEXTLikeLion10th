@@ -57,7 +57,7 @@
             <p>댓글이 없습니다.</p>
             {% endif %}
             {% if user.is_authenticated and comment.author.pk == user.pk %}
-            <a href="#" class="btn btn-sm btn-secondary">수정(미완성)</a>
+            <a href="{% url 'update_comment' post.pk comment.pk %}" class="btn btn-sm btn-secondary">수정(미완성)</a>
             <a href="{% url 'delete_comment' post.pk comment.pk %}" class="btn btn-sm btn-secondary">삭제</a>
             {% endif %}
           </div>

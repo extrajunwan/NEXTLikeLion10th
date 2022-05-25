@@ -25,15 +25,15 @@ urlpatterns = [
     path('', views.list_post, name='home'),
     path('detail/<int:post_pk>', views.detail_post, name='detail_post'),
     path('update_post/<int:pk>', PostUpdate.as_view(), name='update_post'),
-    #path('update_comment/<int:post_pk>/<int:comment_pk>', views.update_comment, name='update_comment'),
+    path('update_comment/<int:post_pk>/<int:comment_pk>', views.update_comment, name='update_comment'),
     path('create_post/', PostCreate.as_view(), name='create_post'),
     path('delete_post/<int:post_pk>', views.delete_post, name='delete_post'),
     path('delete_comment/<int:post_pk>/<int:comment_pk>', views.delete_comment, name='delete_comment'),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('allauth.urls')),
     path('registration/signup', views.signup, name='signup'),
-    #path('registration/login', views.login, name='login'),
-    #path('registration/logout', views.logout, name='logout'),
+    path('registration/login', views.login, name='login'),
+    path('registration/logout', views.logout, name='logout'),
+    path('accounts/', include('allauth.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
